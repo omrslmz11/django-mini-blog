@@ -1,0 +1,14 @@
+# .gitignore içeriği
+
+# Sanal ortam klasörü
+venv/
+
+# Veritabanı dosyası
+db.sqlite3
+
+# Python'un oluşturduğu derleme önbellek dosyaları
+*.pyc
+*/__pycache__/
+
+# Log dosyaları veya diğer geçici veriler
+*.log

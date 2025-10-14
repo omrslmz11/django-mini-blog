@@ -1,0 +1,31 @@
+{% extends 'base.html' %}  {% block content %}        <h1 class="mb-4">Blog Yazıları</h1>
+    
+    {% for post in posts %}
+        <div class="card mb-3 shadow-sm">
+            <div class="card-body">
+                
+                <h2 class="card-title">
+                    <a href="{% url 'post_detail' post.pk %}" class="text-decoration-none">
+                        {{ post.title }} 
+                    </a>
+                </h2>
+                
+                <p class="card-subtitle text-muted mb-2 small">
+                    Yazar: **{{ post.author }}** | Yayınlanma Tarihi: {{ post.created_at|date:"d M Y" }}
+                </p>
+                
+                <hr>
+                
+                <p class="card-text">{{ post.content|truncatechars:150 }}</p>
+                
+                <a href="{% url 'post_detail' post.pk %}" class="btn btn-sm btn-primary mt-2">Devamını Oku</a>
+                
+            </div>
+        </div>
+    {% empty %}
+        <div class="alert alert-warning" role="alert">
+            Blog yazısı bulunmamaktadır.Admin panelinden yeni bir yazı ekleyin.
+        </div>
+    {% endfor %}
+
+{% endblock content %}
