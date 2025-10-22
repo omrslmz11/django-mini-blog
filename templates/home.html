@@ -1,4 +1,8 @@
-{% extends 'base.html' %}  {% block content %}        <h1 class="mb-4">Blog Yazıları</h1>
+{% extends 'base.html' %} 
+
+{% block content %}
+
+    <h1 class="mb-4">Blog Yazıları</h1>
     
     {% for post in posts %}
         <div class="card mb-3 shadow-sm">
@@ -24,7 +28,7 @@
         </div>
     {% empty %}
         <div class="alert alert-warning" role="alert">
-            Blog yazısı bulunmamaktadır.Admin panelinden yeni bir yazı ekleyin.
+            Blog yazısı bulunmamaktadır. Admin panelinden yeni bir yazı ekleyin.
         </div>
     {% endfor %}
 
